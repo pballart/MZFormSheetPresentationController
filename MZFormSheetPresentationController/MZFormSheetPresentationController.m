@@ -223,7 +223,9 @@ static NSMutableDictionary *_instanceOfTransitionClasses = nil;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self handleEntryTransitionAnimated:animated];
+    if (!self.presentingModal) {
+        [self handleEntryTransitionAnimated:animated];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -237,7 +239,9 @@ static NSMutableDictionary *_instanceOfTransitionClasses = nil;
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [self handleOutTransitionAnimated:animated];
+    if (!self.presentingModal) {
+        [self handleOutTransitionAnimated:animated];
+    }
 }
 
 #pragma mark - Swizzle

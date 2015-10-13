@@ -159,6 +159,12 @@ typedef void(^MZFormSheetPresentationControllerTransitionHandler)();
  */
 @property (nonatomic, assign) BOOL shouldApplyBackgroundBlurEffect MZ_APPEARANCE_SELECTOR;
 
+/*
+ Disables the dismiss transition in order t present modals
+ By default, this is NO
+ */
+@property (nonatomic, assign) BOOL presentingModal;
+
 /**
  Returns an initialized popup controller object.
  @param viewController This parameter must not be nil.
